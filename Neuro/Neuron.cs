@@ -47,19 +47,19 @@ namespace Neuro
             {
                 if (inputs[i] < 0 & value == 0)
                 {
-                    if(weights[i] < 0.9) weights[i] += 0.01F;
+                    if(weights[i] < 0.9) weights[i] += 0.001F;
                 }
                 else if (inputs[i] > 0 & value == 0) 
                 {
-                    if (weights[i] > 0.1) weights[i] -= 0.01F;
+                    if (weights[i] > 0.1) weights[i] -= 0.001F;
                 }
                 else if (inputs[i] < 0 & value == 1) 
                 {
-                    if (weights[i] > 0.1) weights[i] -= 0.01F;
+                    if (weights[i] > 0.1) weights[i] -= 0.001F;
                 }
                 else 
                 {
-                    if (weights[i] < 0) weights[i] += 0.01F;
+                    if (weights[i] < 0) weights[i] += 0.001F;
                 }
             }
         }

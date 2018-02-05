@@ -1,28 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Neuro
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Network network = new Network();
-            List<int> inputs = new List<int>();
-            inputs.Add(1);
-            inputs.Add(0);
-            inputs.Add(1);
-            inputs.Add(0);
-            inputs.Add(1);
-            inputs.Add(0);
-            inputs.Add(1);
-            inputs.Add(0);
-            inputs.Add(1);
-            inputs.Add(0);
-            network.think(inputs);
+            int[] ipt = {1, 0};
+            var network = new Network(ipt);
+            for (var i = 0; i < 100; i++) network.think();
+            Console.ReadLine();
+            ipt[0] = 0;
+            ipt[1] = 1;
+            network.ChangeInputs(ipt);
+            for (var i = 0; i < 100; i++) network.think();
+            Console.ReadLine();
+            ipt[1] = 0;
+            ipt[1] = 1;
+            network.ChangeInputs(ipt);
+            for (var i = 0; i < 100; i++) network.think();
+            Console.ReadLine();
+            ipt[0] = 0;
+            ipt[1] = 1;
+            network.ChangeInputs(ipt);
+            for (var i = 0; i < 100; i++) network.think();
             Console.ReadLine();
         }
     }
